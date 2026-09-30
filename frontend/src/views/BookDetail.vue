@@ -71,13 +71,24 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
 
 const route = useRoute()
-const book = ref(null)
-const loading = ref(true)
+const book = ref({
+  title: 'Cicatrizes e Coroas',
+  subtitle: 'Uma história de superação',
+  author: 'Lizi Mulambo',
+  synopsis: '',
+  format: 'físico',
+  price: null,
+  availability: 'indisponível',
+  coverImage: '',
+  featured: true,
+  published: true,
+  slug: 'cicatrizes-e-coroas'
+})
+const loading = ref(false)
 const quantity = ref(1)
 
 const availabilityClass = computed(() => {
@@ -95,17 +106,6 @@ const whatsappOrderLink = computed(() => {
   const message = `Olá, Lizi. Gostaria de encomendar ${quantity.value} exemplar(es) do livro "${book.value.title}". Pode informar o preço, a disponibilidade e as formas de entrega?`
   const encodedMessage = encodeURIComponent(message)
   return `https://wa.me/258857670109?text=${encodedMessage}`
-})
-
-onMounted(async () => {
-  try {
-    const response = await axios.get(`/api/books/${route.params.slug}`)
-    book.value = response.data
-  } catch (error) {
-    console.error('Erro ao carregar livro:', error)
-  } finally {
-    loading.value = false
-  }
 })
 </script>
 

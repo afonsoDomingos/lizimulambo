@@ -46,22 +46,24 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { ref } from 'vue'
 
-const books = ref([])
-const loading = ref(true)
-
-onMounted(async () => {
-  try {
-    const response = await axios.get('/api/books')
-    books.value = response.data
-  } catch (error) {
-    console.error('Erro ao carregar livros:', error)
-  } finally {
-    loading.value = false
+const books = ref([
+  {
+    title: 'Cicatrizes e Coroas',
+    subtitle: 'Uma história de superação',
+    author: 'Lizi Mulambo',
+    synopsis: '',
+    format: 'físico',
+    price: null,
+    availability: 'indisponível',
+    coverImage: '',
+    featured: true,
+    published: true,
+    slug: 'cicatrizes-e-coroas'
   }
-})
+])
+const loading = ref(false)
 </script>
 
 <style scoped>

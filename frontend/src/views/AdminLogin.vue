@@ -46,7 +46,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import axios from 'axios'
 
 const router = useRouter()
 const username = ref('')
@@ -54,25 +53,8 @@ const password = ref('')
 const loading = ref(false)
 const error = ref('')
 
-const handleLogin = async () => {
-  loading.value = true
-  error.value = ''
-  
-  try {
-    const response = await axios.post('/api/admin/login', {
-      username: username.value,
-      password: password.value
-    })
-    
-    localStorage.setItem('adminToken', response.data.token)
-    localStorage.setItem('adminInfo', JSON.stringify(response.data.admin))
-    
-    router.push('/admin')
-  } catch (err) {
-    error.value = err.response?.data?.message || 'Erro ao fazer login. Verifique as suas credenciais.'
-  } finally {
-    loading.value = false
-  }
+const handleLogin = () => {
+  alert('Área administrativa não disponível - Backend não configurado.')
 }
 </script>
 

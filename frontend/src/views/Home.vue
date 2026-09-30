@@ -114,20 +114,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { ref } from 'vue'
 
-const featuredBook = ref(null)
-const whatsappLink = ref('https://wa.me/258857670109?text=Ol%C3%A1%2C%20Lizi.%20Gostaria%20de%20comprar%20o%20livro%20Cicatrizes%20e%20Coroas.%20Pode%20informar%20o%20pre%C3%A7o%2C%20a%20disponibilidade%20e%20as%20formas%20de%20entrega%3F')
-
-onMounted(async () => {
-  try {
-    const response = await axios.get('/api/books/featured')
-    featuredBook.value = response.data
-  } catch (error) {
-    console.error('Erro ao carregar livro em destaque:', error)
-  }
+const featuredBook = ref({
+  title: 'Cicatrizes e Coroas',
+  subtitle: 'Uma história de superação',
+  author: 'Lizi Mulambo',
+  synopsis: '',
+  format: 'físico',
+  price: null,
+  availability: 'indisponível',
+  coverImage: '',
+  featured: true,
+  published: true,
+  slug: 'cicatrizes-e-coroas'
 })
+const whatsappLink = ref('https://wa.me/258857670109?text=Ol%C3%A1%2C%20Lizi.%20Gostaria%20de%20comprar%20o%20livro%20Cicatrizes%20e%20Coroas.%20Pode%20informar%20o%20pre%C3%A7o%2C%20a%20disponibilidade%20e%20as%20formas%20de%20entrega%3F')
 </script>
 
 <style scoped>

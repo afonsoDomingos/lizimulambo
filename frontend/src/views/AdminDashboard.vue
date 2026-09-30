@@ -258,14 +258,56 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import axios from 'axios'
+import { ref } from 'vue'
 
-const router = useRouter()
 const activeTab = ref('books')
-const books = ref([])
-const author = ref(null)
+const books = ref([
+  {
+    _id: '1',
+    title: 'Cicatrizes e Coroas',
+    subtitle: 'Uma história de superação',
+    author: 'Lizi Mulambo',
+    synopsis: '',
+    format: 'físico',
+    price: null,
+    availability: 'indisponível',
+    coverImage: '',
+    featured: true,
+    published: true,
+    slug: 'cicatrizes-e-coroas'
+  }
+])
+const author = ref({
+  name: 'Lizi Mulambo',
+  shortBio: 'Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação".',
+  fullBio: `Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional, tendo exercido funções de liderança em organizações nacionais e internacionais, incluindo ONG internacionais e empresas privadas.
+
+É licenciada em Administração e Gestão de Empresas e certificada como Coach Integral Sistémica. Possui sólida experiência em liderança corporativa, gestão financeira (incluindo small grants), compliance, procurement, políticas e procedimentos internos, gestão patrimonial, relações institucionais, mediação de conflitos e desenvolvimento de equipas de alto desempenho.
+
+Ao longo da sua carreira representou organizações junto de entidades governamentais, parceiros de cooperação e diferentes partes interessadas, contribuindo para o fortalecimento institucional, transparência, eficiência operacional e boa governação.
+
+Paralelamente, desenvolve uma carreira como Life & Executive Coach, mentora e palestrante, apoiando líderes, profissionais, empreendedores e famílias no fortalecimento da inteligência emocional, liderança consciente, desenvolvimento pessoal, propósito de vida e transformação humana.
+
+É fundadora da Associação Sol Nascente, uma iniciativa dedicada ao desenvolvimento comunitário, inclusão social e fortalecimento das famílias, acreditando que uma sociedade mais forte começa pela transformação das pessoas.
+
+Como palestrante, aborda temas como:
+• Liderança feminina e liderança ética;
+• Desenvolvimento pessoal e inteligência emocional;
+• Resiliência e transformação pessoal;
+• Desenvolvimento organizacional;
+• Ética, integridade e cultura organizacional;
+• Coaching familiar e fortalecimento das relações;
+• Gestão de conflitos e comunicação estratégica.
+
+É autora do livro Entre Cicatrizes e Coroas, com lançamento previsto para março de 2027, uma obra dedicada à identidade, resiliência e transformação humana.
+
+Princípio que orienta a sua liderança:
+"Acredito numa liderança construída sobre a ética, a integridade e o serviço. O verdadeiro impacto nasce quando o conhecimento, o amor e o propósito se transformam em ações que desenvolvem pessoas, fortalecem organizações e transformam comunidades."`,
+  facebook: 'https://web.facebook.com/coachlizimulambo/',
+  instagram: 'https://www.instagram.com/lizimulambo2000/',
+  linkedin: 'https://www.linkedin.com/in/lizi-mulambo-67a87064',
+  whatsapp: '+258 85 767 0109'
+})
 const showBookForm = ref(false)
 const editingBook = ref(null)
 
@@ -314,30 +356,6 @@ Princípio que orienta a sua liderança:
   whatsapp: '+258 85 767 0109'
 })
 
-const loadBooks = async () => {
-  try {
-    const token = localStorage.getItem('adminToken')
-    const response = await axios.get('/api/books/admin/all', {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    books.value = response.data
-  } catch (error) {
-    console.error('Erro ao carregar livros:', error)
-  }
-}
-
-const loadAuthor = async () => {
-  try {
-    const response = await axios.get('/api/author')
-    author.value = response.data
-    if (author.value) {
-      authorForm.value = { ...authorForm.value, ...author.value }
-    }
-  } catch (error) {
-    console.error('Erro ao carregar autora:', error)
-  }
-}
-
 const editBook = (book) => {
   editingBook.value = book
   bookForm.value = { ...book }
@@ -361,78 +379,24 @@ const closeBookForm = () => {
   }
 }
 
-const saveBook = async () => {
-  try {
-    const token = localStorage.getItem('adminToken')
-    
-    if (editingBook.value) {
-      await axios.put(
-        `/api/books/admin/${editingBook.value._id}`,
-        bookForm.value,
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-    } else {
-      await axios.post(
-        '/api/books/admin',
-        bookForm.value,
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-    }
-    
-    closeBookForm()
-    loadBooks()
-  } catch (error) {
-    console.error('Erro ao guardar livro:', error)
-    alert('Erro ao guardar livro. Verifique os dados.')
-  }
+const saveBook = () => {
+  alert('Funcionalidade não disponível - Backend não configurado. Por favor, edite os dados directamente no código.')
+  closeBookForm()
 }
 
-const deleteBook = async (id) => {
+const deleteBook = (id) => {
   if (!confirm('Tem certeza que deseja eliminar este livro?')) return
-  
-  try {
-    const token = localStorage.getItem('adminToken')
-    await axios.delete(`/api/books/admin/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-    loadBooks()
-  } catch (error) {
-    console.error('Erro ao eliminar livro:', error)
-    alert('Erro ao eliminar livro.')
-  }
+  alert('Funcionalidade não disponível - Backend não configurado.')
 }
 
-const saveAuthor = async () => {
-  try {
-    const token = localStorage.getItem('adminToken')
-    await axios.put(
-      '/api/author/admin',
-      authorForm.value,
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
-    alert('Informações da autora guardadas com sucesso!')
-  } catch (error) {
-    console.error('Erro ao guardar autora:', error)
-    alert('Erro ao guardar informações da autora.')
-  }
+const saveAuthor = () => {
+  alert('Funcionalidade não disponível - Backend não configurado. Por favor, edite os dados directamente no código.')
 }
 
 const logout = () => {
-  localStorage.removeItem('adminToken')
-  localStorage.removeItem('adminInfo')
-  router.push('/admin/login')
+  router.push('/')
 }
-
-onMounted(() => {
-  const token = localStorage.getItem('adminToken')
-  if (!token) {
-    router.push('/admin/login')
-    return
-  }
-  
-  loadBooks()
-  loadAuthor()
-})
+</script>
 </script>
 
 <style scoped>
