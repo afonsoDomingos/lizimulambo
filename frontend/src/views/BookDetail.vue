@@ -74,6 +74,7 @@
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
+// Hardcoded data - no backend dependency
 const route = useRoute()
 const book = ref({
   title: 'Cicatrizes e Coroas',

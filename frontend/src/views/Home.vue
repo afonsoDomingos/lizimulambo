@@ -116,6 +116,7 @@
 <script setup>
 import { ref } from 'vue'
 
+// Hardcoded data - no backend dependency
 const featuredBook = ref({
   title: 'Cicatrizes e Coroas',
   subtitle: 'Uma história de superação',
