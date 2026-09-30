@@ -448,11 +448,6 @@ onMounted(async () => {
     font-size: 1.25rem;
   }
 
-  .book-placeholder {
-    width: 250px;
-    height: 375px;
-  }
-
   .author-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
