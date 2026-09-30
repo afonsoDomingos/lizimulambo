@@ -29,7 +29,7 @@
                 <span class="countdown-label-small">Segundos</span>
               </div>
             </div>
-            <p class="countdown-date">15 de Dezembro 2025</p>
+            <p class="countdown-date">10 de Dezembro 2025</p>
           </div>
 
           <p class="hero-description">
@@ -188,7 +188,7 @@ const countdown = ref({
 let countdownInterval = null
 
 const updateCountdown = () => {
-  const launchDate = new Date('2025-12-15T00:00:00')
+  const launchDate = new Date('2025-12-10T00:00:00')
   const now = new Date()
   const diff = launchDate - now
 
@@ -316,57 +316,86 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .countdown-container {
-  margin: 2rem 0;
+  margin: 2.5rem 0;
   text-align: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  border-radius: 16px;
+  border: 2px solid #D4AF37;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
 }
 
 .countdown-label {
   font-family: 'Georgia', serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #D4AF37;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .countdown-timer {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .countdown-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1a1a1a;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   color: #D4AF37;
-  padding: 1rem;
-  border-radius: 8px;
-  min-width: 70px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px;
+  min-width: 85px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #D4AF37;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4);
 }
 
 .countdown-value {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: 'Georgia', serif;
   line-height: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-label-small {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: #FFFAF0;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
 }
 
 .countdown-date {
-  font-size: 0.875rem;
-  color: #666;
-  font-style: italic;
-  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
 }
 
 .hero-buttons {
@@ -642,21 +671,36 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
     height: 375px;
   }
 
+  .countdown-container {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+
+  .countdown-label {
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+  }
+
   .countdown-timer {
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .countdown-item {
-    min-width: 60px;
-    padding: 0.75rem 0.5rem;
+    min-width: 65px;
+    padding: 1rem 0.75rem;
   }
 
   .countdown-value {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .countdown-label-small {
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
+    letter-spacing: 1px;
+  }
+
+  .countdown-date {
+    font-size: 0.875rem;
   }
 
   .section-title {
