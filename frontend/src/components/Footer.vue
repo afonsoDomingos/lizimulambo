@@ -55,6 +55,17 @@
 
     <div class="footer-bottom">
       <p>&copy; {{ currentYear }} Lizi Mulambo. Todos os direitos reservados.</p>
+      <div class="powered-by">
+        <a 
+          href="https://www.wehosthere.com/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="powered-by-link"
+        >
+          <img src="/wehosthere-logo.png" alt="WeHosThere" class="wehosthere-logo" />
+          <span>Powered by WeHosThere</span>
+        </a>
+      </div>
     </div>
   </footer>
 </template>
@@ -125,6 +136,28 @@ const currentYear = computed(() => new Date().getFullYear())
   text-align: center;
   color: #888;
   font-size: 0.875rem;
+}
+
+.powered-by {
+  margin-top: 1rem;
+}
+
+.powered-by-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #888;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.powered-by-link:hover {
+  opacity: 0.8;
+}
+
+.wehosthere-logo {
+  height: 24px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
