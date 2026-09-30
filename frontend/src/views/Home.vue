@@ -104,17 +104,26 @@
     <section class="cta">
       <div class="container">
         <h2 class="cta-title">Garanta o seu exemplar de Cicatrizes e Coroas</h2>
-        <a :href="whatsappLink" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+        <button @click="showOrderModal = true" class="btn btn-primary btn-large">
           Encomendar pelo WhatsApp
-        </a>
+        </button>
         <p class="cta-note">A encomenda será combinada pelo WhatsApp</p>
       </div>
     </section>
+
+    <OrderModal
+      :show="showOrderModal"
+      :book-title="featuredBook?.title"
+      :initial-quantity="1"
+      @close="showOrderModal = false"
+      @submit="handleOrderSubmit"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import OrderModal from '../components/OrderModal.vue'
 
 // Hardcoded data - no backend dependency
 const featuredBook = ref({
@@ -130,7 +139,25 @@ const featuredBook = ref({
   published: true,
   slug: 'cicatrizes-e-coroas'
 })
-const whatsappLink = ref('https://wa.me/258857670109?text=Ol%C3%A1%2C%20Lizi.%20Gostaria%20de%20comprar%20o%20livro%20Cicatrizes%20e%20Coroas.%20Pode%20informar%20o%20pre%C3%A7o%2C%20a%20disponibilidade%20e%20as%20formas%20de%20entrega%3F')
+const showOrderModal = ref(false)
+
+const handleOrderSubmit = (formData) => {
+  const message = `Olá, Lizi! Gostaria de encomendar o livro "${formData.quantity}x ${featuredBook.value.title}"
+
+📋 *Dados da Encomenda:*
+• Nome: ${formData.name}
+• Email: ${formData.email}
+• Telefone: ${formData.phone}
+• Quantidade: ${formData.quantity}
+• Cidade/Província: ${formData.city}${formData.address ? `\n• Endereço: ${formData.address}` : ''}${formData.notes ? `\n\n📝 *Notas:* ${formData.notes}` : ''}
+
+Pode informar o preço, a disponibilidade e as formas de entrega?`
+
+  const encodedMessage = encodeURIComponent(message)
+  const whatsappUrl = `https://wa.me/258857670109?text=${encodedMessage}`
+  window.open(whatsappUrl, '_blank')
+  showOrderModal.value = false
+}
 </script>
 
 <style scoped>

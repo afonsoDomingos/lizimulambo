@@ -53,26 +53,33 @@
                 value="1"
                 class="quantity-input"
               />
-              <a 
-                :href="whatsappOrderLink" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                @click="showOrderModal = true"
                 class="btn btn-primary btn-large"
               >
                 Encomendar pelo WhatsApp
-              </a>
+              </button>
               <p class="order-note">A encomenda será combinada pelo WhatsApp</p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <OrderModal
+      :show="showOrderModal"
+      :book-title="book?.title"
+      :initial-quantity="quantity"
+      @close="showOrderModal = false"
+      @submit="handleOrderSubmit"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
+import OrderModal from '../components/OrderModal.vue'
 
 // Hardcoded data - no backend dependency
 const route = useRoute()
@@ -91,6 +98,7 @@ const book = ref({
 })
 const loading = ref(false)
 const quantity = ref(1)
+const showOrderModal = ref(false)
 
 const availabilityClass = computed(() => {
   if (!book.value) return ''
@@ -101,13 +109,23 @@ const availabilityClass = computed(() => {
   return ''
 })
 
-const whatsappOrderLink = computed(() => {
-  if (!book.value) return 'https://wa.me/258857670109'
-  
-  const message = `Olá, Lizi. Gostaria de encomendar ${quantity.value} exemplar(es) do livro "${book.value.title}". Pode informar o preço, a disponibilidade e as formas de entrega?`
+const handleOrderSubmit = (formData) => {
+  const message = `Olá, Lizi! Gostaria de encomendar o livro "${formData.quantity}x ${book.value.title}"
+
+📋 *Dados da Encomenda:*
+• Nome: ${formData.name}
+• Email: ${formData.email}
+• Telefone: ${formData.phone}
+• Quantidade: ${formData.quantity}
+• Cidade/Província: ${formData.city}${formData.address ? `\n• Endereço: ${formData.address}` : ''}${formData.notes ? `\n\n📝 *Notas:* ${formData.notes}` : ''}
+
+Pode informar o preço, a disponibilidade e as formas de entrega?`
+
   const encodedMessage = encodeURIComponent(message)
-  return `https://wa.me/258857670109?text=${encodedMessage}`
-})
+  const whatsappUrl = `https://wa.me/258857670109?text=${encodedMessage}`
+  window.open(whatsappUrl, '_blank')
+  showOrderModal.value = false
+}
 </script>
 
 <style scoped>
