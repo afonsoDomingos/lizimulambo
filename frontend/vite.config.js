@@ -15,5 +15,7 @@ export default defineConfig({
         changeOrigin: true
       }
     }
-  }
+  },
+  // Configuração para produção com Vercel
+  base: './'
 })
