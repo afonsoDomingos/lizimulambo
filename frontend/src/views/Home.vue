@@ -11,15 +11,13 @@
             Conheça o novo livro de Lizi Mulambo e descubra uma história de superação.
           </p>
           <div class="hero-buttons">
-            <a 
-              :href="whatsappLink" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <button 
+              @click="showOrderModal = true"
               class="btn btn-primary"
               aria-label="Comprar o livro Cicatrizes e Coroas pelo WhatsApp"
             >
               Quero comprar o livro
-            </a>
+            </button>
             <router-link to="/sobre" class="btn btn-secondary">
               Conhecer a autora
             </router-link>
