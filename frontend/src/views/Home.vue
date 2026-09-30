@@ -5,7 +5,7 @@
       <div class="hero-container">
         <div class="hero-content">
           <span class="hero-badge">Novo lançamento</span>
-          <h1 id="hero-title" class="hero-title">Cicatrizes e Coroas</h1>
+          <h1 id="hero-title" class="hero-title typewriter">{{ typedTitle }}</h1>
           <h2 class="hero-subtitle">Uma história de superação</h2>
           <p class="hero-description">
             Conheça o novo livro de Lizi Mulambo e descubra uma história de superação.
@@ -120,7 +120,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import OrderModal from '../components/OrderModal.vue'
 
 // Hardcoded data - no backend dependency
@@ -138,6 +138,23 @@ const featuredBook = ref({
   slug: 'cicatrizes-e-coroas'
 })
 const showOrderModal = ref(false)
+
+// Typewriter effect
+const fullTitle = 'Cicatrizes e Coroas'
+const typedTitle = ref('')
+let charIndex = 0
+
+const typeWriter = () => {
+  if (charIndex < fullTitle.length) {
+    typedTitle.value += fullTitle.charAt(charIndex)
+    charIndex++
+    setTimeout(typeWriter, 100)
+  }
+}
+
+onMounted(() => {
+  setTimeout(typeWriter, 500)
+})
 
 const handleOrderSubmit = (formData) => {
   const message = `Olá, Lizi! Gostaria de encomendar o livro "${formData.quantity}x ${featuredBook.value.title}"
@@ -202,6 +219,20 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   color: #1a1a1a;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+}
+
+.typewriter {
+  border-right: 3px solid #D4AF37;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #D4AF37;
+  }
 }
 
 .hero-subtitle {
