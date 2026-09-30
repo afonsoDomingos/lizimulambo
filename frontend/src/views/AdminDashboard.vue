@@ -91,7 +91,7 @@
               id="fullBio" 
               v-model="authorForm.fullBio" 
               class="form-textarea"
-              rows="6"
+              rows="20"
             ></textarea>
           </div>
 

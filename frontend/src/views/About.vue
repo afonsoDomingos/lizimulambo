@@ -145,6 +145,8 @@ onMounted(async () => {
 
 .author-bio-full {
   padding: 2rem 0;
+  max-height: none;
+  overflow: visible;
 }
 
 .section-title {
