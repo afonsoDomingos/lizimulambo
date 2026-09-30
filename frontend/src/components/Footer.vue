@@ -149,16 +149,17 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .powered-by {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .powered-by-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   color: #888;
   text-decoration: none;
   transition: opacity 0.3s ease;
+  font-size: 1rem;
 }
 
 .powered-by-link:hover {
@@ -166,7 +167,7 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .wehosthere-logo {
-  height: 24px;
+  height: 40px;
   width: auto;
 }
 
