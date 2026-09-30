@@ -397,7 +397,6 @@ const logout = () => {
   router.push('/')
 }
 </script>
-</script>
 
 <style scoped>
 .admin-dashboard {
