@@ -6,11 +6,7 @@
       "framework": "vite"
     },
     "backend": {
-      "root": "backend",
-      "framework": null,
-      "buildCommand": "npm install",
-      "devCommand": "npm run dev",
-      "startCommand": "node server.js"
+      "root": "backend"
     }
   },
   "rewrites": [
