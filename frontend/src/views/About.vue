@@ -10,9 +10,7 @@
       <div class="container">
         <div class="author-full">
           <div class="author-photo-large">
-            <div class="photo-placeholder-large">
-              <p>Foto da autora</p>
-            </div>
+            <img src="/author-photo.jpg" alt="Lizi Mulambo" class="author-photo-img-large" />
           </div>
           <div class="author-bio-full">
             <h2 class="section-title">Biografia</h2>
@@ -122,17 +120,14 @@ onMounted(async () => {
   justify-content: center;
 }
 
-.photo-placeholder-large {
+.author-photo-img-large {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFAF0;
-  font-family: 'Georgia', serif;
-  font-size: 1.25rem;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 .author-bio-full {
@@ -206,7 +201,7 @@ onMounted(async () => {
     gap: 2rem;
   }
 
-  .photo-placeholder-large {
+  .author-photo-img-large {
     width: 300px;
     height: 300px;
   }

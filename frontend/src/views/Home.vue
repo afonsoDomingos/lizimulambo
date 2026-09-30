@@ -66,9 +66,7 @@
       <div class="container">
         <div class="author-grid">
           <div class="author-photo">
-            <div class="photo-placeholder">
-              <p>Foto da autora</p>
-            </div>
+            <img src="/author-photo.jpg" alt="Lizi Mulambo" class="author-photo-img" />
           </div>
           <div class="author-info">
             <h2 class="section-title">Sobre Lizi Mulambo</h2>
@@ -284,17 +282,14 @@ onMounted(async () => {
   align-items: center;
 }
 
-.photo-placeholder {
+.author-photo-img {
   width: 300px;
   height: 300px;
-  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFAF0;
-  font-family: 'Georgia', serif;
+  object-fit: cover;
   margin: 0 auto;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .author-bio {
@@ -477,6 +472,11 @@ onMounted(async () => {
   .author-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .author-photo-img {
+    width: 250px;
+    height: 250px;
   }
 
   .section-title {
