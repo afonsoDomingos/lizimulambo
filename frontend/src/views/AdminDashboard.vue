@@ -116,6 +116,16 @@
           </div>
 
           <div class="form-group">
+            <label for="linkedin">LinkedIn</label>
+            <input 
+              id="linkedin" 
+              v-model="authorForm.linkedin" 
+              type="url" 
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
             <label for="whatsapp">WhatsApp</label>
             <input 
               id="whatsapp" 
@@ -278,6 +288,7 @@ const authorForm = ref({
   fullBio: '',
   facebook: 'https://web.facebook.com/coachlizimulambo/',
   instagram: 'https://www.instagram.com/lizimulambo2000/',
+  linkedin: 'https://www.linkedin.com/in/lizi-mulambo-67a87064',
   whatsapp: '+258 85 767 0109'
 })
 

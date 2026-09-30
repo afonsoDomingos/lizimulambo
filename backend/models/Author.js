@@ -26,6 +26,10 @@ const authorSchema = new mongoose.Schema({
     type: String,
     default: 'https://www.instagram.com/lizimulambo2000/'
   },
+  linkedin: {
+    type: String,
+    default: 'https://www.linkedin.com/in/lizi-mulambo-67a87064'
+  },
   whatsapp: {
     type: String,
     default: '+258 85 767 0109'

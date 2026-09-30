@@ -41,6 +41,16 @@
           </li>
           <li>
             <a 
+              href="https://www.linkedin.com/in/lizi-mulambo-67a87064" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a 
               href="https://wa.me/258857670109" 
               target="_blank" 
               rel="noopener noreferrer"

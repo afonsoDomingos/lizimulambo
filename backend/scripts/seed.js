@@ -21,6 +21,7 @@ const seedData = async () => {
         fullBio: '',
         facebook: 'https://web.facebook.com/coachlizimulambo/',
         instagram: 'https://www.instagram.com/lizimulambo2000/',
+        linkedin: 'https://www.linkedin.com/in/lizi-mulambo-67a87064',
         whatsapp: '+258 85 767 0109',
         whatsappLink: 'https://wa.me/258857670109'
       });

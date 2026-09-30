@@ -51,6 +51,15 @@
             <p>Seguir no Instagram</p>
           </a>
           <a 
+            href="https://www.linkedin.com/in/lizi-mulambo-67a87064" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="contact-card"
+          >
+            <div class="contact-icon">LinkedIn</div>
+            <p>Seguir no LinkedIn</p>
+          </a>
+          <a 
             href="https://wa.me/258857670109" 
             target="_blank" 
             rel="noopener noreferrer"
