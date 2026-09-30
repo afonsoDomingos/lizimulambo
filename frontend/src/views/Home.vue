@@ -7,6 +7,31 @@
           <span class="hero-badge">Novo lançamento</span>
           <h1 id="hero-title" class="hero-title typewriter">{{ typedTitle }}</h1>
           <h2 class="hero-subtitle">Uma história de superação</h2>
+          
+          <!-- Countdown Timer -->
+          <div class="countdown-container">
+            <h3 class="countdown-label">Grande Lançamento</h3>
+            <div class="countdown-timer">
+              <div class="countdown-item">
+                <span class="countdown-value">{{ countdown.days }}</span>
+                <span class="countdown-label-small">Dias</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value">{{ countdown.hours }}</span>
+                <span class="countdown-label-small">Horas</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value">{{ countdown.minutes }}</span>
+                <span class="countdown-label-small">Minutos</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value">{{ countdown.seconds }}</span>
+                <span class="countdown-label-small">Segundos</span>
+              </div>
+            </div>
+            <p class="countdown-date">15 de Dezembro 2025</p>
+          </div>
+
           <p class="hero-description">
             Conheça o novo livro de Lizi Mulambo e descubra uma história de superação.
           </p>
@@ -120,7 +145,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import OrderModal from '../components/OrderModal.vue'
 
 // Hardcoded data - no backend dependency
@@ -152,8 +177,48 @@ const typeWriter = () => {
   }
 }
 
+// Countdown Timer
+const countdown = ref({
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0
+})
+
+let countdownInterval = null
+
+const updateCountdown = () => {
+  const launchDate = new Date('2025-12-15T00:00:00')
+  const now = new Date()
+  const diff = launchDate - now
+
+  if (diff > 0) {
+    countdown.value.days = Math.floor(diff / (1000 * 60 * 60 * 24))
+    countdown.value.hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    countdown.value.minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+    countdown.value.seconds = Math.floor((diff % (1000 * 60)) / 1000)
+  } else {
+    // Launch date passed
+    countdown.value.days = 0
+    countdown.value.hours = 0
+    countdown.value.minutes = 0
+    countdown.value.seconds = 0
+    if (countdownInterval) {
+      clearInterval(countdownInterval)
+    }
+  }
+}
+
 onMounted(() => {
   setTimeout(typeWriter, 500)
+  updateCountdown()
+  countdownInterval = setInterval(updateCountdown, 1000)
+})
+
+onUnmounted(() => {
+  if (countdownInterval) {
+    clearInterval(countdownInterval)
+  }
 })
 
 const handleOrderSubmit = (formData) => {
@@ -248,6 +313,60 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   color: #444;
   margin-bottom: 2rem;
   line-height: 1.8;
+}
+
+.countdown-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.countdown-label {
+  font-family: 'Georgia', serif;
+  font-size: 1.25rem;
+  color: #D4AF37;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a;
+  color: #D4AF37;
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 70px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-value {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  line-height: 1;
+}
+
+.countdown-label-small {
+  font-size: 0.75rem;
+  color: #FFFAF0;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-date {
+  font-size: 0.875rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
 }
 
 .hero-buttons {
@@ -521,6 +640,23 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   .book-cover-hero {
     width: 250px;
     height: 375px;
+  }
+
+  .countdown-timer {
+    gap: 0.5rem;
+  }
+
+  .countdown-item {
+    min-width: 60px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .countdown-value {
+    font-size: 1.5rem;
+  }
+
+  .countdown-label-small {
+    font-size: 0.625rem;
   }
 
   .section-title {
