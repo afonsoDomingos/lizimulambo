@@ -42,24 +42,64 @@
 
         <div class="form-group">
           <label for="quantity">Quantidade *</label>
-          <input 
+          <select 
             id="quantity" 
             v-model.number="form.quantity" 
-            type="number" 
-            min="1" 
             required
-          />
+            class="form-select"
+          >
+            <option :value="1">1 exemplar</option>
+            <option :value="2">2 exemplares</option>
+            <option :value="3">3 exemplares</option>
+            <option :value="4">4 exemplares</option>
+            <option :value="5">5 exemplares</option>
+            <option :value="6">6 exemplares</option>
+            <option :value="7">7 exemplares</option>
+            <option :value="8">8 exemplares</option>
+            <option :value="9">9 exemplares</option>
+            <option :value="10">10 exemplares</option>
+            <option :value="20">20 exemplares</option>
+            <option :value="50">50 exemplares</option>
+          </select>
         </div>
 
         <div class="form-group">
           <label for="city">Cidade/Província *</label>
-          <input 
+          <select 
             id="city" 
             v-model="form.city" 
-            type="text" 
-            required 
-            placeholder="Maputo, Gaza, etc."
-          />
+            required
+            class="form-select"
+          >
+            <option value="">Selecione a província</option>
+            <option value="Maputo Cidade">Maputo Cidade</option>
+            <option value="Maputo Província">Maputo Província</option>
+            <option value="Gaza">Gaza</option>
+            <option value="Inhambane">Inhambane</option>
+            <option value="Sofala">Sofala</option>
+            <option value="Manica">Manica</option>
+            <option value="Tete">Tete</option>
+            <option value="Zambézia">Zambézia</option>
+            <option value="Nampula">Nampula</option>
+            <option value="Niassa">Niassa</option>
+            <option value="Cabo Delgado">Cabo Delgado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="paymentMethod">Método de Pagamento Preferido *</label>
+          <select 
+            id="paymentMethod" 
+            v-model="form.paymentMethod" 
+            required
+            class="form-select"
+          >
+            <option value="">Selecione o método</option>
+            <option value="M-Pesa">M-Pesa</option>
+            <option value="Vodacom">Vodacom</option>
+            <option value="Transferência Bancária">Transferência Bancária</option>
+            <option value="Dinheiro">Dinheiro (Entrega)</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -115,6 +155,7 @@ const form = ref({
   phone: '',
   quantity: props.initialQuantity,
   city: '',
+  paymentMethod: '',
   address: '',
   notes: ''
 })
@@ -209,7 +250,8 @@ const submitOrder = () => {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
@@ -218,12 +260,23 @@ const submitOrder = () => {
   font-family: inherit;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
+  background-color: white;
+  cursor: pointer;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
   border-color: #D4AF37;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
 }
 
 .form-group textarea {

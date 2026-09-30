@@ -117,7 +117,8 @@ const handleOrderSubmit = (formData) => {
 • Email: ${formData.email}
 • Telefone: ${formData.phone}
 • Quantidade: ${formData.quantity}
-• Cidade/Província: ${formData.city}${formData.address ? `\n• Endereço: ${formData.address}` : ''}${formData.notes ? `\n\n📝 *Notas:* ${formData.notes}` : ''}
+• Cidade/Província: ${formData.city}
+• Método de Pagamento: ${formData.paymentMethod}${formData.address ? `\n• Endereço: ${formData.address}` : ''}${formData.notes ? `\n\n📝 *Notas:* ${formData.notes}` : ''}
 
 Pode informar o preço, a disponibilidade e as formas de entrega?`
 
