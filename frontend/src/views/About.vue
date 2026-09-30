@@ -16,7 +16,7 @@
             <h2 class="section-title">Biografia</h2>
             <div v-if="author" class="bio-content">
               <p class="short-bio">{{ author.shortBio }}</p>
-              <p v-if="author.fullBio" class="full-bio">{{ author.fullBio }}</p>
+              <div v-if="author.fullBio" class="full-bio" v-html="formatBio(author.fullBio)"></div>
             </div>
             <div v-else class="bio-content">
               <p class="short-bio">
@@ -79,6 +79,30 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 const author = ref(null)
+
+const formatBio = (bio) => {
+  if (!bio) return ''
+  
+  // Split by newlines and process each paragraph
+  const paragraphs = bio.split('\n\n').map(para => {
+    // Handle bullet points
+    if (para.trim().startsWith('•')) {
+      const items = para.split('\n').filter(item => item.trim().startsWith('•'))
+      const listItems = items.map(item => `<li>${item.trim().substring(1).trim()}</li>`).join('')
+      return `<ul>${listItems}</ul>`
+    }
+    
+    // Handle quotes
+    if (para.trim().startsWith('"')) {
+      return `<blockquote>${para.trim()}</blockquote>`
+    }
+    
+    // Regular paragraph
+    return `<p>${para.trim()}</p>`
+  }).join('')
+  
+  return paragraphs
+}
 
 onMounted(async () => {
   try {
@@ -159,6 +183,28 @@ onMounted(async () => {
   font-size: 1.125rem;
   color: #444;
   margin-bottom: 1.5rem;
+}
+
+.full-bio p {
+  margin-bottom: 1.5rem;
+}
+
+.full-bio blockquote {
+  border-left: 4px solid #D4AF37;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #666;
+}
+
+.full-bio ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.full-bio ul li {
+  margin-bottom: 0.5rem;
+  color: #444;
 }
 
 .contact-section {
