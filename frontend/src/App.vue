@@ -29,12 +29,12 @@ const metaTitle = computed(() => {
 
 const metaDescription = computed(() => {
   const descriptions = {
-    'Home': 'Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação". Conheça o novo livro.',
+    'Home': 'Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação". Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional. Conheça o novo livro.',
     'About': 'Conheça Lizi Mulambo, coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação".',
     'Books': 'Descubra os livros de Lizi Mulambo, incluindo "Cicatrizes e Coroas — Uma história de superação".',
     'Contact': 'Entre em contacto com Lizi Mulambo pelo WhatsApp, Facebook ou Instagram para encomendar livros.'
   }
-  return descriptions[route.name] || 'Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação".'
+  return descriptions[route.name] || 'Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação". Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional.'
 })
 </script>
 

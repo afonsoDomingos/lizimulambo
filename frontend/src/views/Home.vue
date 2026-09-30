@@ -68,7 +68,7 @@
           <div class="author-info">
             <h2 class="section-title">Sobre Lizi Mulambo</h2>
             <p class="author-bio">
-              Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação".
+              Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação". Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional, tendo exercido funções de liderança em organizações nacionais e internacionais, incluindo ONG internacionais e empresas privadas.
             </p>
             <router-link to="/sobre" class="btn btn-text">
               Saber mais →

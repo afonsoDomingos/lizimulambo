@@ -16,25 +16,23 @@
             <h2 class="section-title">Biografia</h2>
             <div class="bio-content">
               <p class="short-bio">Lizi Mulambo é coach na área de desenvolvimento pessoal e autora de "Cicatrizes e Coroas — Uma história de superação".</p>
-              <div class="full-bio">
-                <p class="bio-paragraph">Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional, tendo exercido funções de liderança em organizações nacionais e internacionais, incluindo ONG internacionais e empresas privadas.</p>
-                <p class="bio-paragraph">É licenciada em Administração e Gestão de Empresas e certificada como Coach Integral Sistémica. Possui sólida experiência em liderança corporativa, gestão financeira (incluindo small grants), compliance, procurement, políticas e procedimentos internos, gestão patrimonial, relações institucionais, mediação de conflitos e desenvolvimento de equipas de alto desempenho.</p>
-                <p class="bio-paragraph">Ao longo da sua carreira representou organizações junto de entidades governamentais, parceiros de cooperação e diferentes partes interessadas, contribuindo para o fortalecimento institucional, transparência, eficiência operacional e boa governação.</p>
-                <p class="bio-paragraph">Paralelamente, desenvolve uma carreira como Life & Executive Coach, mentora e palestrante, apoiando líderes, profissionais, empreendedores e famílias no fortalecimento da inteligência emocional, liderança consciente, desenvolvimento pessoal, propósito de vida e transformação humana.</p>
-                <p class="bio-paragraph">É fundadora da Associação Sol Nascente, uma iniciativa dedicada ao desenvolvimento comunitário, inclusão social e fortalecimento das famílias, acreditando que uma sociedade mais forte começa pela transformação das pessoas.</p>
-                <p class="bio-paragraph">Como palestrante, aborda temas como:</p>
-                <ul class="bio-list">
-                  <li>Liderança feminina e liderança ética</li>
-                  <li>Desenvolvimento pessoal e inteligência emocional</li>
-                  <li>Resiliência e transformação pessoal</li>
-                  <li>Desenvolvimento organizacional</li>
-                  <li>Ética, integridade e cultura organizacional</li>
-                  <li>Coaching familiar e fortalecimento das relações</li>
-                  <li>Gestão de conflitos e comunicação estratégica</li>
-                </ul>
-                <p class="bio-paragraph">É autora do livro Entre Cicatrizes e Coroas, com lançamento previsto para março de 2027, uma obra dedicada à identidade, resiliência e transformação humana.</p>
-                <p class="bio-quote">Princípio que orienta a sua liderança: "Acredito numa liderança construída sobre a ética, a integridade e o serviço. O verdadeiro impacto nasce quando o conhecimento, o amor e o propósito se transformam em ações que desenvolvem pessoas, fortalecem organizações e transformam comunidades."</p>
-              </div>
+              <p class="bio-paragraph">Profissional sénior com mais de 20 anos de experiência em gestão administrativa, financeira, recursos humanos e desenvolvimento organizacional, tendo exercido funções de liderança em organizações nacionais e internacionais, incluindo ONG internacionais e empresas privadas.</p>
+              <p class="bio-paragraph">É licenciada em Administração e Gestão de Empresas e certificada como Coach Integral Sistémica. Possui sólida experiência em liderança corporativa, gestão financeira (incluindo small grants), compliance, procurement, políticas e procedimentos internos, gestão patrimonial, relações institucionais, mediação de conflitos e desenvolvimento de equipas de alto desempenho.</p>
+              <p class="bio-paragraph">Ao longo da sua carreira representou organizações junto de entidades governamentais, parceiros de cooperação e diferentes partes interessadas, contribuindo para o fortalecimento institucional, transparência, eficiência operacional e boa governação.</p>
+              <p class="bio-paragraph">Paralelamente, desenvolve uma carreira como Life & Executive Coach, mentora e palestrante, apoiando líderes, profissionais, empreendedores e famílias no fortalecimento da inteligência emocional, liderança consciente, desenvolvimento pessoal, propósito de vida e transformação humana.</p>
+              <p class="bio-paragraph">É fundadora da Associação Sol Nascente, uma iniciativa dedicada ao desenvolvimento comunitário, inclusão social e fortalecimento das famílias, acreditando que uma sociedade mais forte começa pela transformação das pessoas.</p>
+              <p class="bio-paragraph">Como palestrante, aborda temas como:</p>
+              <ul class="bio-list">
+                <li>Liderança feminina e liderança ética</li>
+                <li>Desenvolvimento pessoal e inteligência emocional</li>
+                <li>Resiliência e transformação pessoal</li>
+                <li>Desenvolvimento organizacional</li>
+                <li>Ética, integridade e cultura organizacional</li>
+                <li>Coaching familiar e fortalecimento das relações</li>
+                <li>Gestão de conflitos e comunicação estratégica</li>
+              </ul>
+              <p class="bio-paragraph">É autora do livro Entre Cicatrizes e Coroas, com lançamento previsto para março de 2027, uma obra dedicada à identidade, resiliência e transformação humana.</p>
+              <p class="bio-quote">Princípio que orienta a sua liderança: "Acredito numa liderança construída sobre a ética, a integridade e o serviço. O verdadeiro impacto nasce quando o conhecimento, o amor e o propósito se transformam em ações que desenvolvem pessoas, fortalecem organizações e transformam comunidades."</p>
             </div>
           </div>
         </div>

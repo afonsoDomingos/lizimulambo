@@ -72,8 +72,8 @@
           rel="noopener noreferrer"
           class="powered-by-link"
         >
-          <img src="/wehosthere-logo.png" alt="WeHosThere" class="wehosthere-logo" />
           <span>Powered by WeHosThere</span>
+          <img src="/wehosthere-logo.png" alt="WeHosThere" class="wehosthere-logo" />
         </a>
       </div>
     </div>
