@@ -29,7 +29,7 @@
                 <span class="countdown-label-small">Segundos</span>
               </div>
             </div>
-            <p class="countdown-date">10 de Novembro 2025</p>
+            <p class="countdown-date">10 de Dezembro 2025</p>
           </div>
 
           <p class="hero-description">
@@ -188,7 +188,7 @@ const countdown = ref({
 let countdownInterval = null
 
 const updateCountdown = () => {
-  const launchDate = new Date('2025-11-10T00:00:00')
+  const launchDate = new Date('2025-12-10T00:00:00')
   const now = new Date()
   const diff = launchDate - now
 
