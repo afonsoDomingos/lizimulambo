@@ -10,6 +10,7 @@
     </main>
     <Footer />
     <WhatsAppButton />
+    <ScrollButton />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import { useRoute } from 'vue-router'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import WhatsAppButton from './components/WhatsAppButton.vue'
+import ScrollButton from './components/ScrollButton.vue'
 import MetaTags from './components/MetaTags.vue'
 
 const route = useRoute()
