@@ -316,23 +316,23 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .countdown-container {
-  margin: 2.5rem 0;
+  margin: 1rem 0;
   text-align: center;
-  padding: 1.5rem;
+  padding: 0.75rem;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-  border-radius: 16px;
-  border: 2px solid #D4AF37;
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
 }
 
 .countdown-label {
   font-family: 'Georgia', serif;
-  font-size: 1.5rem;
+  font-size: 0.875rem;
   color: #D4AF37;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -347,9 +347,9 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 
 .countdown-timer {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -359,43 +359,43 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   align-items: center;
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   color: #D4AF37;
-  padding: 1.5rem 1.25rem;
-  border-radius: 12px;
-  min-width: 85px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  border: 2px solid #D4AF37;
+  padding: 0.5rem 0.4rem;
+  border-radius: 6px;
+  min-width: 45px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #D4AF37;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .countdown-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
 }
 
 .countdown-value {
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   font-family: 'Georgia', serif;
   line-height: 1;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-label-small {
-  font-size: 0.875rem;
+  font-size: 0.625rem;
   color: #FFFAF0;
-  margin-top: 0.75rem;
+  margin-top: 0.25rem;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5px;
   font-weight: 600;
 }
 
 .countdown-date {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #1a1a1a;
   font-weight: 600;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-family: 'Georgia', serif;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .hero-buttons {
@@ -672,35 +672,35 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   }
 
   .countdown-container {
-    margin: 1.5rem 0;
-    padding: 1rem;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
   }
 
   .countdown-label {
-    font-size: 1.125rem;
-    letter-spacing: 1px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
   }
 
   .countdown-timer {
-    gap: 0.75rem;
+    gap: 0.4rem;
   }
 
   .countdown-item {
-    min-width: 65px;
-    padding: 1rem 0.75rem;
+    min-width: 38px;
+    padding: 0.4rem 0.3rem;
   }
 
   .countdown-value {
-    font-size: 1.75rem;
+    font-size: 1rem;
   }
 
   .countdown-label-small {
-    font-size: 0.6875rem;
-    letter-spacing: 1px;
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
   }
 
   .countdown-date {
-    font-size: 0.875rem;
+    font-size: 0.625rem;
   }
 
   .section-title {
