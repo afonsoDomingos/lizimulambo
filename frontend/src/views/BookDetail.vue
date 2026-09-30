@@ -13,12 +13,7 @@
       <div class="container">
         <div class="book-full">
           <div class="book-cover-large">
-            <div v-if="book.coverImage" class="cover-image-large">
-              <img :src="book.coverImage" :alt="book.title" />
-            </div>
-            <div v-else class="cover-placeholder-large">
-              <p>Capa do livro</p>
-            </div>
+            <img src="/book-cover.jpg" :alt="book.title" class="book-cover-img-detail" />
           </div>
           <div class="book-info-full">
             <h1 class="book-title">{{ book.title }}</h1>
@@ -146,24 +141,10 @@ onMounted(async () => {
   justify-content: center;
 }
 
-.cover-image-large img {
+.book-cover-img-detail {
   width: 350px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.cover-placeholder-large {
-  width: 350px;
-  height: 525px;
-  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #FFFAF0;
-  font-family: 'Georgia', serif;
-  font-size: 1.25rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -320,12 +301,7 @@ onMounted(async () => {
     font-size: 1.25rem;
   }
 
-  .cover-placeholder-large {
-    width: 280px;
-    height: 420px;
-  }
-
-  .cover-image-large img {
+  .book-cover-img-detail {
     width: 280px;
   }
 

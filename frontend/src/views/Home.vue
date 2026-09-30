@@ -25,11 +25,8 @@
             </router-link>
           </div>
         </div>
-        <div class="hero-image" role="img" aria-label="Capa do livro Cicatrizes e Coroas">
-          <div class="book-placeholder">
-            <p>Capa do livro</p>
-            <span class="placeholder-text">A carregar...</span>
-          </div>
+        <div class="hero-image">
+          <img src="/book-cover.jpg" alt="Capa do livro Cicatrizes e Coroas" class="book-cover-hero" />
         </div>
       </div>
     </section>
@@ -88,9 +85,7 @@
         <div class="catalog-grid">
           <div v-if="featuredBook" class="book-card featured">
             <div class="book-cover">
-              <div class="cover-placeholder">
-                <p>Capa</p>
-              </div>
+              <img src="/book-cover.jpg" :alt="featuredBook.title" class="book-cover-img" />
             </div>
             <div class="book-details">
               <h3>{{ featuredBook.title }}</h3>
@@ -207,24 +202,12 @@ onMounted(async () => {
   animation: fadeInRight 1s ease;
 }
 
-.book-placeholder {
+.book-cover-hero {
   width: 300px;
   height: 450px;
-  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
+  object-fit: cover;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #FFFAF0;
-  font-family: 'Georgia', serif;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.placeholder-text {
-  font-size: 0.875rem;
-  opacity: 0.8;
-  margin-top: 0.5rem;
 }
 
 .book-preview,
@@ -330,9 +313,10 @@ onMounted(async () => {
   background: linear-gradient(135deg, #F5E6D3 0%, #E8D4B8 100%);
 }
 
-.cover-placeholder {
-  color: #666;
-  font-family: 'Georgia', serif;
+.book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .book-details {
@@ -477,6 +461,11 @@ onMounted(async () => {
   .author-photo-img {
     width: 250px;
     height: 250px;
+  }
+
+  .book-cover-hero {
+    width: 250px;
+    height: 375px;
   }
 
   .section-title {
