@@ -68,9 +68,9 @@ const closeMenu = () => {
 }
 
 .logo {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 1.5rem;
-  font-weight: bold;
   color: #1a1a1a;
   text-decoration: none;
   letter-spacing: 0.05em;
@@ -86,7 +86,8 @@ const closeMenu = () => {
 .nav-links a {
   color: #1a1a1a;
   text-decoration: none;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
@@ -100,7 +101,7 @@ const closeMenu = () => {
   color: #FFFAF0 !important;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 700;
   transition: background-color 0.3s ease;
 }
 

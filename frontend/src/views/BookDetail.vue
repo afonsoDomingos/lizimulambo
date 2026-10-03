@@ -173,7 +173,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .book-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
@@ -181,7 +182,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .book-subtitle-large {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: 1.5rem;
   color: #666;
   margin-bottom: 0.5rem;
@@ -242,7 +244,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .book-synopsis h2 {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 1.5rem;
   color: #1a1a1a;
   margin-bottom: 1rem;
@@ -286,11 +289,11 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {

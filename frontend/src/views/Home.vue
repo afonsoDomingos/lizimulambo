@@ -2,6 +2,7 @@
   <div class="home">
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-background" :style="{ transform: `scale(${scale}) translateY(${translateY}px)`, opacity }"></div>
       <div class="hero-container">
         <div class="hero-content">
           <span class="hero-badge">Novo lançamento</span>
@@ -55,7 +56,7 @@
     </section>
 
     <!-- Book Preview Section -->
-    <section class="book-preview">
+    <section class="book-preview" ref="bookPreviewRef" :class="{ 'visible': bookPreviewVisible }">
       <div class="container">
         <h2 class="section-title">Sobre o livro</h2>
         <div class="book-info">
@@ -82,7 +83,7 @@
     </section>
 
     <!-- Author Preview Section -->
-    <section class="author-preview">
+    <section class="author-preview" ref="authorPreviewRef" :class="{ 'visible': authorPreviewVisible }">
       <div class="container">
         <div class="author-grid">
           <div class="author-photo">
@@ -102,7 +103,7 @@
     </section>
 
     <!-- Catalog Section -->
-    <section class="catalog">
+    <section class="catalog" ref="catalogRef" :class="{ 'visible': catalogVisible }">
       <div class="container">
         <h2 class="section-title">Catálogo</h2>
         <div class="catalog-grid">
@@ -147,6 +148,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import OrderModal from '../components/OrderModal.vue'
+import { useScrollZoom } from '../composables/useScrollZoom'
+import { useIntersectionObserver } from '../composables/useIntersectionObserver'
 
 // Hardcoded data - no backend dependency
 const featuredBook = ref({
@@ -163,6 +166,14 @@ const featuredBook = ref({
   slug: 'cicatrizes-e-coroas'
 })
 const showOrderModal = ref(false)
+
+// Scroll zoom effect for hero
+const { scale, translateY, opacity } = useScrollZoom()
+
+// Intersection observer for sections
+const { target: bookPreviewRef, isVisible: bookPreviewVisible } = useIntersectionObserver()
+const { target: authorPreviewRef, isVisible: authorPreviewVisible } = useIntersectionObserver()
+const { target: catalogRef, isVisible: catalogVisible } = useIntersectionObserver()
 
 // Typewriter effect
 const fullTitle = 'Cicatrizes e Coroas'
@@ -252,6 +263,20 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFFAF0 0%, #F5E6D3 100%);
+  z-index: -1;
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+  will-change: transform, opacity;
 }
 
 .hero-container {
@@ -279,7 +304,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .hero-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 3.5rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
@@ -301,7 +327,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .hero-subtitle {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: 1.5rem;
   color: #666;
   margin-bottom: 1.5rem;
@@ -326,11 +353,11 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .countdown-label {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   font-size: 0.875rem;
   color: #D4AF37;
   margin-bottom: 0.75rem;
-  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   animation: pulse 2s ease-in-out infinite;
@@ -374,8 +401,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 
 .countdown-value {
   font-size: 1.25rem;
-  font-weight: bold;
-  font-family: 'Georgia', serif;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -394,7 +421,7 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   color: #1a1a1a;
   font-weight: 600;
   margin-top: 0.5rem;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -423,6 +450,16 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 .catalog,
 .cta {
   padding: 4rem 2rem;
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.book-preview.visible,
+.author-preview.visible,
+.catalog.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 
 .container {
@@ -431,7 +468,8 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .section-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 2rem;
@@ -572,11 +610,11 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {

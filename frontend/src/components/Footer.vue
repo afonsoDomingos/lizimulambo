@@ -103,7 +103,8 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-section h3 {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #D4AF37;

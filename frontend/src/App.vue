@@ -48,7 +48,7 @@ const metaDescription = computed(() => {
 }
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #FFFAF0;
   color: #1a1a1a;
   line-height: 1.6;

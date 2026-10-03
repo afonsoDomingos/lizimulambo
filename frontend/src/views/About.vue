@@ -100,7 +100,8 @@
 }
 
 .page-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 3rem;
   color: #1a1a1a;
   margin: 0;
@@ -144,7 +145,8 @@
 }
 
 .section-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 2rem;
   color: #1a1a1a;
   margin-bottom: 2rem;

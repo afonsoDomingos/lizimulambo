@@ -79,7 +79,8 @@ const loading = ref(false)
 }
 
 .page-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 3rem;
   color: #1a1a1a;
   margin: 0 0 1rem 0;
@@ -147,7 +148,7 @@ const loading = ref(false)
 
 .cover-placeholder {
   color: #666;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .book-details {
@@ -155,7 +156,8 @@ const loading = ref(false)
 }
 
 .book-details h3 {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 1.25rem;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
@@ -178,11 +180,11 @@ const loading = ref(false)
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #D4AF37;
   color: #FFFAF0;
 }

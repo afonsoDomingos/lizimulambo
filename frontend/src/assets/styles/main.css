@@ -10,11 +10,16 @@ html {
 }
 
 body {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #FFFAF0;
   color: #1a1a1a;
   line-height: 1.6;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
 }
 
 /* Animações */

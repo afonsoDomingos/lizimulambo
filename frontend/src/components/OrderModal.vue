@@ -208,7 +208,8 @@ const submitOrder = () => {
 
 .modal-header h2 {
   margin: 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   color: #1a1a1a;
   font-size: 1.5rem;
 }

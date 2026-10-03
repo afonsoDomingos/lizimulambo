@@ -81,7 +81,8 @@
 }
 
 .page-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 3rem;
   color: #1a1a1a;
   margin: 0 0 1rem 0;
@@ -137,7 +138,8 @@
 }
 
 .contact-card h3 {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: #1a1a1a;
@@ -162,7 +164,8 @@
 }
 
 .section-title {
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
   font-size: 2rem;
   color: #1a1a1a;
   margin-bottom: 1.5rem;
@@ -183,11 +186,11 @@
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 700;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  font-family: 'Georgia', serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-primary {
