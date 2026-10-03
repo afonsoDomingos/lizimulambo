@@ -3,6 +3,7 @@
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-background" :style="{ transform: `scale(${scale}) translateY(${translateY}px)`, opacity }"></div>
+      <div class="hero-light"></div>
       <div class="hero-container">
         <div class="hero-content">
           <span class="hero-badge">Novo lançamento</span>
@@ -279,6 +280,19 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   will-change: transform, opacity;
 }
 
+.hero-light {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-light 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -294,13 +308,32 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 
 .hero-badge {
   display: inline-block;
-  background-color: #D4AF37;
+  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
   color: #FFFAF0;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 0.875rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shine 3s infinite;
 }
 
 .hero-title {
@@ -540,15 +573,38 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.book-card:hover::before {
+  left: 100%;
 }
 
 .book-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.2);
 }
 
 .book-card.featured {
   border: 2px solid #D4AF37;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .book-cover {
@@ -618,12 +674,36 @@ Pode informar o preço, a disponibilidade e as formas de entrega?`
 }
 
 .btn-primary {
-  background-color: #D4AF37;
+  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
   color: #FFFAF0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background-color: #B4941F;
+  background: linear-gradient(135deg, #B4941F 0%, #9A7A18 100%);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-secondary {

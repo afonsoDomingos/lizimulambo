@@ -79,3 +79,123 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #B4941F;
 }
+
+/* Luxe Shine Effect */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.luxe-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxe-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  animation: shine 3s infinite;
+}
+
+.luxe-shine:hover::before {
+  animation: shine 1.5s infinite;
+}
+
+/* Luxe Glow Effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+.luxe-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Border Shine Effect */
+@keyframes border-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.luxe-border-shine {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    #D4AF37,
+    #FFD700,
+    #D4AF37,
+    #B4941F,
+    #D4AF37
+  );
+  background-size: 400% 400%;
+  animation: border-shine 3s ease infinite;
+}
+
+.luxe-border-shine::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #FFFAF0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.luxe-border-shine > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Luxe Text Glow */
+.luxe-text-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
+               0 0 20px rgba(212, 175, 55, 0.3),
+               0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Floating Light Effect */
+@keyframes float-light {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.luxe-float-light {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float-light 4s ease-in-out infinite;
+  pointer-events: none;
+}

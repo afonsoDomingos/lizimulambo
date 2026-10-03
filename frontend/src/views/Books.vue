@@ -121,15 +121,38 @@ const loading = ref(false)
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.book-card:hover::before {
+  left: 100%;
 }
 
 .book-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.2);
 }
 
 .book-card.featured {
   border: 2px solid #D4AF37;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
 .book-cover {

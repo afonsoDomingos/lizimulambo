@@ -108,6 +108,23 @@ const currentYear = computed(() => new Date().getFullYear())
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #D4AF37;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #D4AF37, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.footer-section:hover h3::after {
+  width: 100%;
 }
 
 .footer-section p {

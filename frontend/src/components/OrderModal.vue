@@ -302,13 +302,37 @@ const submitOrder = () => {
 }
 
 .btn-primary {
-  background-color: #D4AF37;
-  color: #1a1a1a;
+  background: linear-gradient(135deg, #D4AF37 0%, #B4941F 100%);
+  color: #FFFAF0;
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
-  background-color: #b8962e;
+  background: linear-gradient(135deg, #B4941F 0%, #9A7A18 100%);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 .btn-secondary {
